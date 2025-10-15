@@ -55,6 +55,26 @@
       padding: 10px 0;
       box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.05);
     }
+    .donate-section {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .donate-section button {
+      padding: 15px 35px;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: #0070ba;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .donate-section button:hover {
+      background-color: #005c99;
+    }
   </style>
 </head>
 <body>
@@ -62,22 +82,27 @@
     <h1>Welcome to CollectorsHall Gallery</h1>
     <p>Explore unique pieces from my personal collection. Click below to visit my Vinted profile and shop.</p>
     <a href="https://www.vinted.co.uk/member/265452162-collectorshall" target="_blank">Visit My Vinted Gallery</a>
+
+    <!-- PayPal Donate Button -->
+    <div class="donate-section">
+      <p><strong>If you'd like to support me, you can donate using the button below. Thank you!</strong></p>
+      <form action="https://www.paypal.com/donate/?hosted_button_id=4PFHYTVSDXFZ8&cancel_return=https://collectorshall.github.io/cancelled.html&return=https://collectorshall.github.io/thankyou.html" method="post" target="_top">
+        <button type="submit">
+          <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal" style="height: 24px;">
+          Donate with PayPal
+        </button>
+      </form>
+    </div>
+
+    <!-- GoFundMe Embed -->
+    <div style="margin-top: 50px;">
+      <div class="gfm-embed" data-url="https://www.gofundme.com/f/my-journey-of-personal-growth-and-mental-health-education/widget/large?sharesheet=undefined&attribution_id=sl:ceaa9d44-04bb-459f-aa7e-07baad6df665"></div>
+      <script defer src="https://www.gofundme.com/static/js/embed.js"></script>
+    </div>
   </div>
+
   <footer>
     <p>Created by CollectorsHall | All rights reserved</p>
   </footer>
-<!-- PayPal Donate Button -->
-<div style="text-align: center; margin-top: 30px;">
-  <p><strong>If you'd like to support me, you can donate using the button below. Thank you!</strong></p>
-  <form action="https://www.paypal.com/donate/?hosted_button_id=4PFHYTVSDXFZ8&cancel_return=https://collectorshall.github.io/cancelled.html&return=https://collectorshall.github.io/thankyou.html" method="post" target="_top">
-    <button type="submit" style="padding: 15px 35px; font-size: 18px; font-weight: bold; background-color: #0070ba; color: white; border: none; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px;">
-      <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal" style="height: 24px;">
-      Donate with PayPal
-    </button>
-  </form>
-</div>
-
 </body>
 </html>
-
-<div class="gfm-embed" data-url="https://www.gofundme.com/f/my-journey-of-personal-growth-and-mental-health-education/widget/large?sharesheet=undefined&attribution_id=sl:ceaa9d44-04bb-459f-aa7e-07baad6df665"></div><script defer src="https://www.gofundme.com/static/js/embed.js"></script>
