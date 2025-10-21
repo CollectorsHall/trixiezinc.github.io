@@ -3,89 +3,144 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome to CollectorsHall Gallery</title>
+  <title>TrixieZinc’s Page</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f0f8ff; /* Light blue background */
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #c3f0f9, #f0d9ff);
       margin: 0;
       padding: 0;
+      color: #333;
     }
     .container {
       text-align: center;
-      padding: 50px;
-      background-color: #ffffff; /* White background for content area */
-      border-radius: 10px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      padding: 60px 30px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
       max-width: 800px;
-      margin: 30px auto;
+      margin: 50px auto;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1.2s ease forwards;
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
     h1 {
-      font-size: 40px;
-      color: #4b0082; /* Deep purple */
+      font-size: 48px;
+      color: #6a0dad;
       margin-bottom: 20px;
     }
     p {
-      font-size: 18px;
-      color: #333;
+      font-size: 20px;
+      line-height: 1.6;
       margin-bottom: 30px;
     }
-    a {
-      display: inline-block;
-      margin-top: 20px;
+    .social-links {
+      margin-bottom: 40px;
+    }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 12px;
+      text-decoration: none;
       font-size: 20px;
       color: #fff;
-      background-color: #ff6347; /* Tomato red */
-      padding: 15px 30px;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
+      padding: 12px 25px;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInSlide 1s ease forwards;
     }
-    a:hover {
-      background-color: #ff4500; /* OrangeRed on hover */
+    .social-links a img {
+      transition: transform 0.3s;
+      animation: float 3s ease-in-out infinite;
     }
-    footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-      color: #888;
-      font-size: 14px;
-      background-color: #fff; /* Footer background to match the content area */
-      padding: 10px 0;
-      box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.05);
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0); }
     }
-    .donate-section {
-      text-align: center;
-      margin-top: 40px;
+    @keyframes fadeInSlide {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
+    .social-links a:nth-child(1) { animation-delay: 1s; }
+    .social-links a:nth-child(2) { animation-delay: 1.2s; }
+
+    .social-links a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 0 15px rgba(255,255,255,0.3);
+    }
+    .social-links a:hover img {
+      transform: scale(1.3) rotate(10deg);
+      animation: none;
+    }
+    .social-links a.youtube { background-color: #FF0000; }
+    .social-links a.discord { background-color: #7289DA; }
+
     .donate-section button {
-      padding: 15px 35px;
-      font-size: 18px;
+      padding: 20px 45px;
+      font-size: 22px;
       font-weight: bold;
-      background-color: #0070ba;
+      background: linear-gradient(to right, #0070ba, #005c99);
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 12px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: bounceGlow 1.5s ease-out 1;
+    }
+    @keyframes bounceGlow {
+      0% { transform: translateY(0); box-shadow: 0 0 0 rgba(0,0,0,0); }
+      25% { transform: translateY(-6px); box-shadow: 0 8px 20px rgba(0,0,0,0.25), 0 0 15px rgba(255,255,255,0.2); }
+      50% { transform: translateY(0); box-shadow: 0 4px 15px rgba(0,0,0,0.2), 0 0 12px rgba(255,255,255,0.15); }
+      75% { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,0.22), 0 0 13px rgba(255,255,255,0.18); }
+      100% { transform: translateY(0); box-shadow: 0 0 0 rgba(0,0,0,0); }
     }
     .donate-section button:hover {
-      background-color: #005c99;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25), 0 0 15px rgba(255,255,255,0.2);
+      animation: none;
+    }
+
+    footer {
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      padding: 15px 0;
+      margin-top: 50px;
+    }
+    .gfm-embed {
+      margin-top: 50px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Welcome to CollectorsHall Gallery</h1>
-    <p>Explore unique pieces from my personal collection. Click below to visit my Vinted profile and shop.</p>
-    <a href="https://www.vinted.co.uk/member/265452162-collectorshall" target="_blank">Visit My Vinted Gallery</a>
+    <h1>Welcome to TrixieZinc’s Page</h1>
+    <p>Hi! I’m a YouTuber sharing psychology quotes, motivational content, and thought-provoking insights. Follow along for inspiration, learning, and daily positive vibes!</p>
+
+    <!-- Social Media Links -->
+    <div class="social-links">
+      <a href="https://youtube.com/@realtrixiezinc?si=LA4NX-mkW0qW0Qia" class="youtube" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/24/ffffff/youtube-play.png" alt="YouTube"/> YouTube
+      </a>
+      <a href="YOUR_DISCORD_INVITE_LINK" class="discord" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/24/ffffff/discord-logo.png" alt="Discord"/> Discord
+      </a>
+    </div>
 
     <!-- PayPal Donate Button -->
     <div class="donate-section">
-      <p><strong>If you'd like to support me, you can donate using the button below. Thank you!</strong></p>
+      <p><strong>If you'd like to support my work, you can donate using the button below. Thank you!</strong></p>
       <form action="https://www.paypal.com/donate/?hosted_button_id=4PFHYTVSDXFZ8&cancel_return=https://collectorshall.github.io/cancelled.html&return=https://collectorshall.github.io/thankyou.html" method="post" target="_top">
         <button type="submit">
           <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal" style="height: 24px;">
@@ -95,14 +150,14 @@
     </div>
 
     <!-- GoFundMe Embed -->
-    <div style="margin-top: 50px;">
+    <div class="gfm-embed">
       <div class="gfm-embed" data-url="https://www.gofundme.com/f/my-journey-of-personal-growth-and-mental-health-education/widget/large?sharesheet=undefined&attribution_id=sl:ceaa9d44-04bb-459f-aa7e-07baad6df665"></div>
       <script defer src="https://www.gofundme.com/static/js/embed.js"></script>
     </div>
   </div>
 
   <footer>
-    <p>Created by CollectorsHall | All rights reserved</p>
+    <p>Created by TrixieZinc | All rights reserved</p>
   </footer>
 </body>
 </html>
